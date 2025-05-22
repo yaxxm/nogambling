@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳门骰宝游戏</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>澳门骰宝游戏</h1>
+            <div class="table-info">
+                <div class="table-number">桌号: 001</div>
+                <div class="player-count">人数: 1</div>
+            </div>
+        </header>
+        
+        <div class="game-area">
+            <!-- 骰宝桌面 -->
+            <div class="sic-bo-table">
+                <!-- 大小区域 -->
+                <div class="betting-area big-small-area">
+                    <div class="bet-option" data-bet="small">
+                        <div class="bet-label">小</div>
+                        <div class="bet-range">点数 4 - 10</div>
+                        <div class="bet-odds">1.035</div>
+                        <div class="bet-note">豹子通吃</div>
+                    </div>
+                    <div class="bet-option" data-bet="big">
+                        <div class="bet-label">大</div>
+                        <div class="bet-range">点数 11 - 17</div>
+                        <div class="bet-odds">1.035</div>
+                        <div class="bet-note">豹子通吃</div>
+                    </div>
+                </div>
+                
+                <!-- 点数区域 -->
+                <div class="betting-area number-area">
+                    <div class="number-row">
+                        <div class="bet-option" data-bet="4">4</div>
+                        <div class="bet-option" data-bet="5">5</div>
+                        <div class="bet-option" data-bet="6">6</div>
+                        <div class="bet-option" data-bet="7">7</div>
+                        <div class="bet-option" data-bet="8">8</div>
+                        <div class="bet-option" data-bet="9">9</div>
+                        <div class="bet-option" data-bet="10">10</div>
+                        <div class="bet-option" data-bet="11">11</div>
+                        <div class="bet-option" data-bet="12">12</div>
+                        <div class="bet-option" data-bet="13">13</div>
+                        <div class="bet-option" data-bet="14">14</div>
+                        <div class="bet-option" data-bet="15">15</div>
+                        <div class="bet-option" data-bet="16">16</div>
+                        <div class="bet-option" data-bet="17">17</div>
+                    </div>
+                    <div class="odds-row">
+                        <div class="bet-odds">70.3</div>
+                        <div class="bet-odds">34.65</div>
+                        <div class="bet-odds">20.4</div>
+                        <div class="bet-odds">13.25</div>
+                        <div class="bet-odds">9.17</div>
+                        <div class="bet-odds">7.56</div>
+                        <div class="bet-odds">6.92</div>
+                        <div class="bet-odds">6.92</div>
+                        <div class="bet-odds">7.56</div>
+                        <div class="bet-odds">9.17</div>
+                        <div class="bet-odds">13.25</div>
+                        <div class="bet-odds">20.4</div>
+                        <div class="bet-odds">34.65</div>
+                        <div class="bet-odds">70.3</div>
+                    </div>
+                </div>
+                
+                <!-- 双骰组合区域 -->
+                <div class="betting-area dice-combo-area">
+                    <div class="combo-title">双骰组合</div>
+                    <div class="combo-grid">
+                        <!-- 双骰组合选项将通过JS动态生成 -->
+                    </div>
+                    <div class="combo-odds">6.13</div>
+                </div>
+                
+                <!-- 单骰、双骰、三骰区域 -->
+                <div class="betting-area specific-area">
+                    <div class="specific-row">
+                        <div class="bet-option" data-bet="dice1">1</div>
+                        <div class="bet-option" data-bet="dice2">2</div>
+                        <div class="bet-option" data-bet="dice3">3</div>
+                        <div class="bet-option" data-bet="dice4">4</div>
+                        <div class="bet-option" data-bet="dice5">5</div>
+                        <div class="bet-option" data-bet="dice6">6</div>
+                    </div>
+                    <div class="bet-types">
+                        <div class="bet-type">单骰 1</div>
+                        <div class="bet-type">双骰 2-4</div>
+                        <div class="bet-type">三骰 12</div>
+                    </div>
+                </div>
+                
+                <!-- 骰子区域 -->
+                <div class="dice-container">
+                    <div class="dice-cover">请开始押注</div>
+                    <div class="dice-area">
+                        <div class="dice" id="dice1">
+                            <div class="dice-face" id="dice1-face1"></div>
+                            <div class="dice-face" id="dice1-face2"></div>
+                            <div class="dice-face" id="dice1-face3"></div>
+                            <div class="dice-face" id="dice1-face4"></div>
+                            <div class="dice-face" id="dice1-face5"></div>
+                            <div class="dice-face" id="dice1-face6"></div>
+                        </div>
+                        <div class="dice" id="dice2">
+                            <div class="dice-face" id="dice2-face1"></div>
+                            <div class="dice-face" id="dice2-face2"></div>
+                            <div class="dice-face" id="dice2-face3"></div>
+                            <div class="dice-face" id="dice2-face4"></div>
+                            <div class="dice-face" id="dice2-face5"></div>
+                            <div class="dice-face" id="dice2-face6"></div>
+                        </div>
+                        <div class="dice" id="dice3">
+                            <div class="dice-face" id="dice3-face1"></div>
+                            <div class="dice-face" id="dice3-face2"></div>
+                            <div class="dice-face" id="dice3-face3"></div>
+                            <div class="dice-face" id="dice3-face4"></div>
+                            <div class="dice-face" id="dice3-face5"></div>
+                            <div class="dice-face" id="dice3-face6"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 控制面板 -->
+            <div class="controls-panel">
+                <div class="game-info">
+                    <div class="min-bet">最小押注: 1000</div>
+                    <div class="current-bet">本局总押注: 0</div>
+                    <div class="remaining-bets">未开约子局数: 31</div>
+                </div>
+                
+                <div class="chips-container">
+                    <div class="chip" data-value="1000" draggable="true">1K</div>
+                    <div class="chip" data-value="5000" draggable="true">5K</div>
+                    <div class="chip" data-value="10000" draggable="true">10K</div>
+                    <div class="chip" data-value="20000" draggable="true">20K</div>
+                    <div class="chip" data-value="50000" draggable="true">50K</div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="clear-bet">清除单一押注</button>
+                    <button id="clear-all">清除全部押注</button>
+                    <button id="repeat-bet">重复押注</button>
+                    <button id="confirm-bet">确认押注</button>
+                </div>
+                
+                <div class="game-stats">
+                    <div class="stat-item">比率: <span id="ratio">1:1</span></div>
+                    <div class="stat-item">总赢分: <span id="total-win">0</span></div>
+                    <div class="stat-item">总押注: <span id="total-bet">0</span></div>
+                    <div class="stat-item">余额: <span id="balance">1000000.00</span></div>
+                </div>
+                
+                <div class="history-panel">
+                    <h3>历史记录</h3>
+                    <div class="history-pages">
+                        <span class="page-nav">◀</span>
+                        <span class="page-indicator">01/05</span>
+                        <span class="page-nav">▶</span>
+                    </div>
+                    <div class="history-list" id="history-list">
+                        <!-- 历史记录将在这里动态添加 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 拖动中的筹码元素 -->
+    <div id="dragging-chip" class="dragging-chip hidden"></div>
+
+    <!-- 引入脚本 -->
+    <script src="dice.js"></script>
+    <script src="betting.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

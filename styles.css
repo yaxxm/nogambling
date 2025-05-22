@@ -1,0 +1,702 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 15px;
+}
+
+h1 {
+    color: #ffd700;
+    font-size: 36px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.table-info {
+    display: flex;
+    gap: 20px;
+    color: #ffd700;
+    font-size: 18px;
+}
+
+.game-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 骰宝桌面样式 */
+.sic-bo-table {
+    flex: 2;
+    min-width: 700px;
+    background-color: #0a4d2e;
+    border-radius: 10px;
+    border: 3px solid #ffd700;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 投注区域通用样式 */
+.betting-area {
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+}
+
+/* 大小区域样式 */
+.big-small-area {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.big-small-area .bet-option {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.big-small-area .bet-option:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.bet-label {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.bet-range, .bet-odds, .bet-note {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* 点数区域样式 */
+.number-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.number-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.number-row .bet-option {
+    flex: 1;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.number-row .bet-option:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.odds-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.odds-row .bet-odds {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: #ddd;
+}
+
+/* 双骰组合区域样式 */
+.dice-combo-area {
+    height: 150px;
+}
+
+.combo-title {
+    font-size: 16px;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.combo-grid {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 5px;
+    height: 80px;
+}
+
+.combo-item {
+    border: 1px solid #ffd700;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.combo-item:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.combo-dice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.mini-dice {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: 2px;
+    position: relative;
+}
+
+.mini-dot {
+    width: 3px;
+    height: 3px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.combo-odds {
+    text-align: right;
+    font-size: 12px;
+    color: #ddd;
+    margin-top: 5px;
+}
+
+/* 单骰、双骰、三骰区域样式 */
+.specific-area {
+    height: 100px;
+}
+
+.specific-row {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.specific-row .bet-option {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 5px;
+}
+
+.specific-row .bet-option:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.bet-types {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.bet-type {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* 骰子区域样式 */
+.dice-container {
+    position: relative;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice-cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.dice-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    perspective: 1000px;
+}
+
+.dice {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.dice-face {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* 骰子六个面的位置 */
+.dice-face:nth-child(1) { transform: translateZ(30px); }
+.dice-face:nth-child(2) { transform: rotateX(180deg) translateZ(30px); }
+.dice-face:nth-child(3) { transform: rotateY(90deg) translateZ(30px); }
+.dice-face:nth-child(4) { transform: rotateY(-90deg) translateZ(30px); }
+.dice-face:nth-child(5) { transform: rotateX(90deg) translateZ(30px); }
+.dice-face:nth-child(6) { transform: rotateX(-90deg) translateZ(30px); }
+
+/* 控制面板样式 */
+.controls-panel {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(10, 77, 46, 0.5);
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #ffd700;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* 筹码样式 */
+.chips-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.chip {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.chip[data-value="1000"] {
+    background: linear-gradient(135deg, #fff, #ddd);
+    color: #333;
+    border: 3px dashed #333;
+}
+
+.chip[data-value="5000"] {
+    background: linear-gradient(135deg, #ff9999, #ff5555);
+    color: white;
+    border: 3px dashed #fff;
+}
+
+.chip[data-value="10000"] {
+    background: linear-gradient(135deg, #99ccff, #3399ff);
+    color: white;
+    border: 3px dashed #fff;
+}
+
+.chip[data-value="20000"] {
+    background: linear-gradient(135deg, #99ff99, #33cc33);
+    color: white;
+    border: 3px dashed #fff;
+}
+
+.chip[data-value="50000"] {
+    background: linear-gradient(135deg, #cc99ff, #9933ff);
+    color: white;
+    border: 3px dashed #fff;
+}
+
+.chip:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* 拖动中的筹码 */
+.dragging-chip {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transform: translate(0, 0); /* 确保GPU加速，使拖动更流畅 */
+    transition: none; /* 禁用过渡效果，确保拖动时立即响应 */
+}
+
+.hidden {
+    display: none;
+}
+
+/* 投注区域上的筹码 */
+.placed-chip {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+}
+
+/* 按钮样式 */
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* 策略控制面板样式 */
+.strategy-controls {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ffd700;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.strategy-controls h3 {
+    color: #ffd700;
+    margin: 0 0 15px 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.control-group {
+    margin-bottom: 10px;
+}
+
+.control-group label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.control-group input[type="number"],
+.control-group select {
+    width: 120px;
+    padding: 5px;
+    border: 1px solid #ffd700;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.control-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.strategy-stats {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ffd700;
+}
+
+.strategy-stats p {
+    margin: 5px 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.strategy-stats span {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #333;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+}
+
+button:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#confirm-bet {
+    grid-column: span 2;
+    background-color: #ffd700;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 游戏统计样式 */
+.game-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border: 1px solid #ffd700;
+}
+
+.stat-item {
+    font-size: 14px;
+}
+
+.stat-item span {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* 历史记录样式 */
+.history-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border: 1px solid #ffd700;
+}
+
+.history-panel h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.history-pages {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.page-nav {
+    color: #ffd700;
+    cursor: pointer;
+}
+
+.page-indicator {
+    color: #ddd;
+    font-size: 14px;
+}
+
+.history-list {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.history-result {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.history-dice {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.history-win {
+    color: #00ff00;
+}
+
+.history-lose {
+    color: #ff0000;
+}
+
+/* 动画效果 */
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.win-animation {
+    animation: win-pulse 1s ease-in-out infinite;
+}
+
+@keyframes win-pulse {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
+}
+
+.lose-animation {
+    animation: lose-pulse 1s ease-in-out infinite;
+}
+
+@keyframes lose-pulse {
+    0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .game-area {
+        flex-direction: column;
+    }
+    
+    .sic-bo-table {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .big-small-area {
+        height: 80px;
+    }
+    
+    .number-row .bet-option {
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .dice {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .dice-face {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .chip {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+}
